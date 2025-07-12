@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styled from '@emotion/styled';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FlashCard } from './FlashCard';
@@ -225,7 +225,7 @@ export function FlashCardDeck({ initialCards, onCardsUpdate }: FlashCardDeckProp
     setCurrentIndex((prev) => Math.min(cards.length - 1, prev + 1));
   };
 
-  const handleDragEnd = (event: any, info: any) => {
+  const handleDragEnd = (_event: any, info: any) => {
     const swipe = info.offset.x;
     const velocity = info.velocity.x;
 
@@ -241,7 +241,7 @@ export function FlashCardDeck({ initialCards, onCardsUpdate }: FlashCardDeckProp
     setDragDirection(null);
   };
 
-  const handleDrag = (event: any, info: any) => {
+  const handleDrag = (_event: any, info: any) => {
     const swipe = info.offset.x;
     setDragDirection(swipe > 0 ? 'right' : 'left');
   };
